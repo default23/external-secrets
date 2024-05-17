@@ -163,6 +163,10 @@ type SecretStoreProvider struct {
 
 	// +optional
 	Passbolt *PassboltProvider `json:"passbolt,omitempty"`
+
+	// CSM configures this store to sync secrets using the Cloud.ru Secret Manager provider
+	// +optional
+	CSM *CSMProvider `json:"csm,omitempty"`
 }
 
 type CAProviderType string
