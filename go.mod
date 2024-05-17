@@ -45,7 +45,7 @@ require (
 	golang.org/x/oauth2 v0.20.0
 	google.golang.org/api v0.177.0
 	google.golang.org/genproto v0.0.0-20240429193739-8cf5692501f6
-	google.golang.org/grpc v1.63.2
+	google.golang.org/grpc v1.64.0
 	gopkg.in/yaml.v3 v3.0.1
 	grpc.go4.org v0.0.0-20170609214715-11d0a25b4919
 	k8s.io/api v0.30.0
@@ -72,6 +72,8 @@ require (
 	github.com/alibabacloud-go/tea-utils/v2 v2.0.5
 	github.com/aliyun/credentials-go v1.3.3
 	github.com/avast/retry-go/v4 v4.6.0
+	github.com/cloudru-tech/iam-sdk v1.0.2
+	github.com/cloudru-tech/secret-manager-sdk v1.0.0
 	github.com/cyberark/conjur-api-go v0.11.2
 	github.com/fortanix/sdkms-client-go v0.4.0
 	github.com/go-openapi/strfmt v0.23.0
@@ -185,8 +187,8 @@ require (
 	go.opentelemetry.io/otel/metric v1.26.0 // indirect
 	go.opentelemetry.io/otel/trace v1.26.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20240429193739-8cf5692501f6 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240429193739-8cf5692501f6 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240610135401-a8a62080eff3 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240604185151-ef581f913117 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	k8s.io/kube-openapi v0.0.0-20240430033511-f0e62f92d13f // indirect
 	lukechampine.com/frand v1.4.2 // indirect
@@ -295,7 +297,7 @@ require (
 	golang.org/x/time v0.5.0 // indirect
 	golang.org/x/tools v0.20.0 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.4.0 // indirect
-	google.golang.org/protobuf v1.34.0 // indirect
+	google.golang.org/protobuf v1.34.2 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
