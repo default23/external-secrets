@@ -115,7 +115,7 @@ func (c *Client) GetAllSecrets(ctx context.Context, ref esv1beta1.ExternalSecret
 	for {
 		secrets, err := c.apiClient.ListSecrets(ctx, searchReq)
 		if err != nil {
-			return nil, fmt.Errorf("failed to list secrets: %s", err)
+			return nil, fmt.Errorf("failed to list secrets: %w", err)
 		}
 		if len(secrets) == 0 {
 			break
@@ -156,7 +156,7 @@ func (c *Client) accessSecret(ctx context.Context, key, version string) ([]byte,
 			NameExact: key,
 		})
 		if err != nil {
-			return nil, fmt.Errorf("list secrets by name '%s': %s", key, err)
+			return nil, fmt.Errorf("list secrets by name '%s': %w", key, err)
 		}
 		if len(secrets) == 0 {
 			return nil, fmt.Errorf("secret with name '%s' not found", key)

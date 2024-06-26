@@ -38,7 +38,7 @@ type CredentialsResolver interface {
 	Resolve(ctx context.Context) (*Credentials, error)
 }
 
-// APIClient - Cloudru Secret Manager Service Client
+// APIClient - Cloudru Secret Manager Service Client.
 type APIClient struct {
 	cr CredentialsResolver
 
@@ -137,7 +137,7 @@ func (c *APIClient) AccessSecretVersion(ctx context.Context, id, version string)
 			return nil, fmt.Errorf("secret '%s %s' not found", id, version)
 		}
 
-		return nil, fmt.Errorf("failed to get the secret by id '%s v%s': %s", id, version, err)
+		return nil, fmt.Errorf("failed to get the secret by id '%s v%s': %w", id, version, err)
 	}
 
 	return secret.GetData().GetValue(), nil

@@ -1,3 +1,17 @@
+/*
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package secretmanager
 
 import (
@@ -172,10 +186,10 @@ func provideEndpoints(ref *esv1beta1.CloudruSMProvider) (discoveryURL, tokenURL,
 		var u *url.URL
 		u, err = url.Parse(ref.DiscoveryURL)
 		if err != nil {
-			return
+			return "", "", "", fmt.Errorf("invalid discovery URL: %w", err)
 		}
 		if u.Scheme != "https" && u.Scheme != "http" {
-			return "", "", "", errors.New("invalid scheme in discovery URL")
+			return "", "", "", errors.New("invalid scheme in discovery URL, expecting the http or https")
 		}
 
 		endpointsURL = ref.DiscoveryURL
@@ -185,7 +199,7 @@ func provideEndpoints(ref *esv1beta1.CloudruSMProvider) (discoveryURL, tokenURL,
 	var endpoints *EndpointsResponse
 	endpoints, err = GetEndpoints(endpointsURL)
 	if err != nil {
-		return
+		return "", "", "", fmt.Errorf("failed to get the cloud.ru endpoints: %w", err)
 	}
 
 	smEndpoint := endpoints.Get("secret-manager")
@@ -198,5 +212,5 @@ func provideEndpoints(ref *esv1beta1.CloudruSMProvider) (discoveryURL, tokenURL,
 		return "", "", "", errors.New("iam API is not available")
 	}
 
-	return discoveryURL, iamEndpoint.Address, smEndpoint.Address, nil
+	return endpointsURL, iamEndpoint.Address, smEndpoint.Address, nil
 }

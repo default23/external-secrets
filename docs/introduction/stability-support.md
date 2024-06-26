@@ -32,7 +32,7 @@ We want to cover the following cases:
 The following table describes the stability level of each provider and who's responsible.
 
 | Provider                                                                                                   | Stability |                                                                                                                                                                              Maintainer |
-|------------------------------------------------------------------------------------------------------------| :-------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|------------------------------------------------------------------------------------------------------------| :-------: |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | [AWS Secrets Manager](https://external-secrets.io/latest/provider/aws-secrets-manager/)                    |  stable   |                                                                                                                                 [external-secrets](https://github.com/external-secrets) |
 | [AWS Parameter Store](https://external-secrets.io/latest/provider/aws-parameter-store/)                    |  stable   |                                                                                                                                 [external-secrets](https://github.com/external-secrets) |
 | [Hashicorp Vault](https://external-secrets.io/latest/provider/hashicorp-vault/)                            |  stable   |                                                                                                                                 [external-secrets](https://github.com/external-secrets) |
@@ -51,17 +51,18 @@ The following table describes the stability level of each provider and who's res
 | [Doppler SecretOps Platform](https://external-secrets.io/latest/provider/doppler)                          |   alpha   |                                                                                         [@ryan-blunden](https://github.com/ryan-blunden/) [@nmanoogian](https://github.com/nmanoogian/) |
 | [Keeper Security](https://www.keepersecurity.com/)                                                         |   alpha   |                                                                                                                                              [@ppodevlab](https://github.com/ppodevlab) |
 | [Scaleway](https://external-secrets.io/latest/provider/scaleway)                                           |   alpha   |                                                                                                                                                   [@azert9](https://github.com/azert9/) |
-| [Conjur](https://external-secrets.io/latest/provider/conjur)                                               |   stable   |                                                                                                                                 [@davidh-cyberark](https://github.com/davidh-cyberark/) [@szh](https://github.com/szh) |
+| [Conjur](https://external-secrets.io/latest/provider/conjur)                                               |   stable   |                                                                                                  [@davidh-cyberark](https://github.com/davidh-cyberark/) [@szh](https://github.com/szh) |
 | [Delinea](https://external-secrets.io/latest/provider/delinea)                                             |   alpha   |                                                                                                                                     [@michaelsauter](https://github.com/michaelsauter/) |
-| [Pulumi ESC](https://external-secrets.io/latest/provider/pulumi)                                           |   alpha   |                                                                                                                                                  [@dirien](https://github.com/dirien) |
-| [Passbolt](https://external-secrets.io/latest/provider/passbolt)                                           |   alpha   |                                                                                                                                                   |
+| [Pulumi ESC](https://external-secrets.io/latest/provider/pulumi)                                           |   alpha   |                                                                                                                                                    [@dirien](https://github.com/dirien) |
+| [Passbolt](https://external-secrets.io/latest/provider/passbolt)                                           |   alpha   |                                                                                                                                                                                         |
+| [Cloud.ru](https://external-secrets.io/latest/provider/cloudru)                                            |   alpha   |                                                                                                                                              [@default23](https://github.com/default23) |
 
 ## Provider Feature Support
 
 The following table show the support for features across different providers.
 
 | Provider                  | find by name | find by tags | metadataPolicy Fetch | referent authentication | store validation | push secret | DeletionPolicy Merge/Delete |
-| ------------------------- | :----------: | :----------: | :------------------: | :---------------------: | :--------------: | :---------: | :-------------------------: |
+|---------------------------| :----------: |:------------:| :------------------: |:-----------------------:| :--------------: | :---------: | :-------------------------: |
 | AWS Secrets Manager       |      x       |      x       |          x           |            x            |        x         |      x      |              x              |
 | AWS Parameter Store       |      x       |      x       |          x           |            x            |        x         |      x      |              x              |
 | Hashicorp Vault           |      x       |      x       |          x           |            x            |        x         |      x      |              x              |
@@ -84,6 +85,7 @@ The following table show the support for features across different providers.
 | Delinea                   |      x       |              |                      |                         |        x         |             |                             |
 | Pulumi ESC                |      x       |              |                      |                         |        x         |             |                             |
 | Passbolt                  |      x       |              |                      |                         |        x         |             |                             |
+| Cloud.ru                  |      x       |      x       |                      |            x            |        x         |             |                             |
 
 ## Support Policy
 
